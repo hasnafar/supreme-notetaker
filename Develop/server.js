@@ -12,7 +12,7 @@ const PORT=process.env.PORT || 8080;
 const app=express();
 
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static("./Develop/public"));
 
 app.listen(PORT, function(){
     console.log(`Listening on port ${PORT}`);
