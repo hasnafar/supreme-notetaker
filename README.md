@@ -10,3 +10,4 @@
 
 ## Links
 Git Hub Repo Link: https://github.com/hasnafar/supreme-notetaker
+Deployed  URL: https://supreme--notetaker.herokuapp.com/
