@@ -28,7 +28,7 @@ app.get('/notes',function(req,res){
 })
 
 app.get('/api/notes',function(req,res){
-    res.json(notes);
+    res.sendFile(path.join(__dirname,'/db/db.json'));
 })
 
 app.post('/api/notes',function(req,res){
@@ -40,7 +40,7 @@ app.post('/api/notes',function(req,res){
     }
     
     notes.push(note);
-    fs.writeFileSync('./db/db.json',JSON.stringify(notes));
+    fs.writeFileSync('Develop/db/db.json',JSON.stringify(notes));
     res.send(notes);
     
 }) 
