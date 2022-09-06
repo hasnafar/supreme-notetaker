@@ -3,7 +3,9 @@ const fs = require('fs');
 const cheerio = require('cheerio');
 const path=require('path');
 
-const notes=require('./db/db.json');
+let rawData=fs.readFileSync('./db/db.json');
+
+const notes=JSON.parse(rawData);
 
 const PORT=8080;
 
@@ -38,5 +40,7 @@ app.post('/api/notes',function(req,res){
     }
     
     notes.push(note);
+    fs.writeFileSync('./db/db.json',JSON.stringify(notes));
     res.send(notes);
+    
 }) 
