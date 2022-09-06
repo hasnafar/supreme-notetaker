@@ -14,11 +14,6 @@ const app=express();
 app.use(express.json());
 app.use(express.static("public"));
 
-app.listen(PORT, function(){
-    console.log(`Listening on port ${PORT}`);
-    console.log(notes.length);
-})
-
 app.get('/',function(req,res){
     res.sendFile(path.join(__dirname,'/public/index.html'));
 })
@@ -42,5 +37,5 @@ app.post('/api/notes',function(req,res){
     notes.push(note);
     fs.writeFileSync('./db/db.json',JSON.stringify(notes));
     res.send(notes);
-    
+
 }) 
