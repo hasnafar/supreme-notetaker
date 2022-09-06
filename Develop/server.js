@@ -1,4 +1,6 @@
 const express = require('express');
+const fs = require('fs');
+const cheerio = require('cheerio');
 const path=require('path');
 
 const notes=require('./db/db.json');
